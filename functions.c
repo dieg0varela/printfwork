@@ -1,7 +1,7 @@
 #include "holberton.h"
 void print_c(va_list list)
 {
-	write(1, va_arg(list, int), 1);
+	write(1, (char)va_arg(list, int), 1);
 	va_end(list);
 }
 
@@ -15,6 +15,6 @@ void print_s(va_list list)
 
 void print_mod(va_list list)
 {
-	write(1, '%', 1);
+	write(1, (char)'%', 1);
 	va_end(list);
 }
