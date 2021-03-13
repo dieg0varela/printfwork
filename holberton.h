@@ -24,5 +24,6 @@ void print_s(va_list list);
 
 void print_mod(va_list list);
 
+void print_d(va_list list);
 
 #endif

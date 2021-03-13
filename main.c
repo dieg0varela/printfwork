@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	_printf("%%");
+	_printf("%d", 34);
 
 	return (0);
 
