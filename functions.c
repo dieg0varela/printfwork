@@ -8,7 +8,6 @@
 void print_c(va_list list)
 {
 	char *c = va_arg(list, char *);
-	printf("HOLA\n");
 	write(1, &c, 1);
 	va_end(list);
 }
@@ -50,4 +49,9 @@ void print_d(va_list list)
 	write(1, in, len);
 	va_end(list);
 
+}
+
+void print_normal(char ch)
+{
+	write(1, &ch, 1);
 }

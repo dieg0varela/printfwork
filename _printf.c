@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
+		else
+		{
+			print_normal(format[i]);
+		}
 		i++;
 	}
 	va_end (ap);

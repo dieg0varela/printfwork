@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	_printf("%d", 34);
+	_printf("HOLA MANITO%c", '\n');
 
 	return (0);
 
