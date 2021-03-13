@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	_printf("HOLA MANITO%c", '\n');
+	_printf("%d%c", 847473447 + 2, '\n');
 
 	return (0);
 

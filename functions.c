@@ -36,7 +36,14 @@ void print_mod(va_list list)
 	write(1, &c, 1);
 	va_end(list);
 }
-
+void rec_pd(int num)
+{
+	if (num != 0)
+	{
+		rec_pd(num / 10);
+		print_normal(num % 10 + '0');
+	}
+}
 /**
  * print_d - function called by _printf to print digits
  * @list: argument variable that is passed
@@ -44,10 +51,10 @@ void print_mod(va_list list)
  */
 void print_d(va_list list)
 {
-	char *in = va_arg(list, int);
-	int len = strlen(in);
-	write(1, in, len);
+	int in = va_arg(list, int);
+	rec_pd(in);
 	va_end(list);
+
 
 }
 
