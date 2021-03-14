@@ -36,6 +36,11 @@ void print_mod(va_list list)
 	write(1, &c, 1);
 	va_end(list);
 }
+/**
+ * print_mod - function called by _printf to print mod character
+ * @list: argument variable that is passed
+ * Return: void
+ */
 void rec_pd(int num)
 {
 	if (num != 0)
