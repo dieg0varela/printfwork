@@ -26,6 +26,8 @@ int print_mod(va_list list);
 
 int print_d(va_list list);
 
+int print_rev(va_list list);
+
 int print_normal(char ch);
 
 #endif
