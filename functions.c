@@ -53,6 +53,7 @@ void rec_pd(int num, int *cont)
 		*cont += 1;
 	}
 }
+
 /**
  * print_d - function called by _printf to print digits
  * @list: argument variable that is passed
@@ -65,10 +66,12 @@ int print_d(va_list list)
 	rec_pd(in, &cont_nums);
 	va_end(list);
 	return (cont_nums);
-
-
 }
 
+/**
+ * print_normal - prints a string.
+ * @ch: characters passed one by one.
+ **/
 int print_normal(char ch)
 {
 	write(1, &ch, 1);
