@@ -12,20 +12,20 @@
 typedef struct pr
 {
 	char *op;
-	void (*f)(va_list);
+	int (*f)(va_list);
 
 } pr_f;
 
 int _printf(const char *format, ...);
 
-void print_c(va_list list);
+int print_c(va_list list);
 
-void print_s(va_list list);
+int print_s(va_list list);
 
-void print_mod(va_list list);
+int print_mod(va_list list);
 
-void print_d(va_list list);
+int print_d(va_list list);
 
-void print_normal(char ch);
+int print_normal(char ch);
 
 #endif

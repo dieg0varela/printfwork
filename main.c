@@ -3,8 +3,8 @@
 
 int main(void)
 {
-	_printf("%d%c", 847473447 + 2, '\n');
-
+	int i = _printf("%d%c", 847473447 + 2, '\n');
+	printf("%i\n", i);
 	return (0);
 
 }

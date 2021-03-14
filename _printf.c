@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
+	int length = 0;
 	int i = 0, j;
 
 	pr_f arr[] = {
@@ -19,7 +20,6 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_start (ap, format);
-
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == arr[j].op[0])
 				{
-					arr[j].f(ap);
+					length += arr[j].f(ap);
 					break;
 				}
 				j++;
@@ -43,5 +43,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end (ap);
-	return (0);
+	return (length);
 }

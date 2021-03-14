@@ -5,11 +5,12 @@
  * @list: argument variable that is passed
  * Return: void
  */
-void print_c(va_list list)
+int print_c(va_list list)
 {
 	char *c = va_arg(list, char *);
 	write(1, &c, 1);
 	va_end(list);
+	return (1);
 }
 
 /**
@@ -17,12 +18,13 @@ void print_c(va_list list)
  * @list: argument variable that is passed
  * Return: void
  */
-void print_s(va_list list)
+int print_s(va_list list)
 {
 	char *str = va_arg(list, char *);
 	int len = strlen(str);
 	write(1, str, len);
 	va_end(list);
+	return (len);
 }
 
 /**
@@ -30,23 +32,25 @@ void print_s(va_list list)
  * @list: argument variable that is passed
  * Return: void
  */
-void print_mod(va_list list)
+int print_mod(va_list list)
 {
 	char c = '%';
 	write(1, &c, 1);
 	va_end(list);
+	return (1);
 }
 /**
  * print_mod - function called by _printf to print mod character
  * @list: argument variable that is passed
  * Return: void
  */
-void rec_pd(int num)
+void rec_pd(int num, int *cont)
 {
 	if (num != 0)
 	{
-		rec_pd(num / 10);
+		rec_pd(num / 10, cont);
 		print_normal(num % 10 + '0');
+		*cont += 1;
 	}
 }
 /**
@@ -54,16 +58,19 @@ void rec_pd(int num)
  * @list: argument variable that is passed
  * Return: void
  */
-void print_d(va_list list)
+int print_d(va_list list)
 {
 	int in = va_arg(list, int);
-	rec_pd(in);
+	int cont_nums = 0;
+	rec_pd(in, &cont_nums);
 	va_end(list);
+	return (cont_nums);
 
 
 }
 
-void print_normal(char ch)
+int print_normal(char ch)
 {
 	write(1, &ch, 1);
+	return (1);
 }
