@@ -74,3 +74,13 @@ int print_normal(char ch)
 	write(1, &ch, 1);
 	return (1);
 }
+
+int print_rev(va_list list)
+{
+	char *str = va_arg(list, char*);
+	int i = 0, len = strlen(str);
+	for (i = len - 1 ; i >= 0 ; i--)
+		write(1, &str[i], 1);
+	va_end(list);
+	return (len);
+}
