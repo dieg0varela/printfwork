@@ -1,7 +1,6 @@
 #ifndef PRINTF
 #define PRINTF
 
-
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -27,6 +26,8 @@ int print_mod(va_list list);
 int print_d(va_list list);
 
 int print_rev(va_list list);
+
+int print_rot(va_list list);
 
 int print_normal(char ch);
 

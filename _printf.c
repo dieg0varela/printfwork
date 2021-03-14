@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{"d", print_d},
 		{"i", print_d},
 		{"r", print_rev},
+		{"R", print_rot},
 		{NULL, NULL}
 	};
 	va_start (ap, format);
