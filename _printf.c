@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			print_normal(format[i]);
+			length += print_normal(format[i]);
 		}
 		i++;
 	}

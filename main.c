@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	int i = _printf("%d%c", 847473447 + 2, '\n');
+	int i = _printf("%d%c%% hola\n", 69000 + 420 , '\n');
 	printf("%i\n", i);
 	return (0);
 
