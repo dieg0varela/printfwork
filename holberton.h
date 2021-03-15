@@ -31,4 +31,6 @@ int print_rot(va_list list);
 
 int print_normal(char ch);
 
+void rec_pd(int num, int *cont);
+
 #endif
